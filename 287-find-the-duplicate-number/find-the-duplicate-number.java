@@ -1,9 +1,8 @@
 class Solution {
     public int findDuplicate(int[] nums) {
-        int i=0;
+       int i=0;
         int n=nums.length;
         while(i<n){
-         if(nums[i]!=i+1){
             int correctIndex=nums[i]-1;
             if(nums[i]!=nums[correctIndex]){
                 //swap
@@ -12,15 +11,19 @@ class Solution {
                 nums[correctIndex]=temp;
             }
             else{
-               return  nums[i];
-            }
-          }
-            else{
                 i++;
             }
         }
-        return -1;
+        // List<Integer> ans=new ArrayList<>();
 
+        for(int index=0;index<n;index++){
+            if(nums[index]!=index+1){
+                // ans.add(index+1);
+                return nums[index];
+
+            }
+        }
+        return -1;
        
         
     }
