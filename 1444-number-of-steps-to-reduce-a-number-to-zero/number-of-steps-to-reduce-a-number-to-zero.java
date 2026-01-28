@@ -1,16 +1,32 @@
 class Solution {
     public int numberOfSteps(int num) {
         
-        return helper( num,0);
+        // return helper( num,0);
+
+        int steps=0;
+
+        while(true){
+            if(num==0){
+                return steps;
+            }
+            if(num%2==0){
+                num=num/2;
+                steps++;
+            }
+            else{
+                num=num-1;
+                steps++;
+            }
+        }
     }
 
-    private int helper(int num,int steps ){
-        if(num==0){
-            return steps;
-        }
-        if(num%2==0){
-            return helper(num/2,steps+1);
-        }
-        return helper(num-1,steps+1);
-    }
+    // private int helper(int num,int steps ){
+    //     if(num==0){
+    //         return steps;
+    //     }
+    //     if(num%2==0){
+    //         return helper(num/2,steps+1);
+    //     }
+    //     return helper(num-1,steps+1);
+    // }
 }
