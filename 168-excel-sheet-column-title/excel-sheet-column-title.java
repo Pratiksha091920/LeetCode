@@ -3,7 +3,7 @@ class Solution {
         StringBuilder sb = new StringBuilder();
 
         while (columnNumber > 0) {
-            columnNumber--;                 // shift because there's no zero
+            columnNumber--;                 
             int remainder = columnNumber % 26;
             char ch = (char) ('A' + remainder);
             sb.append(ch);
