@@ -1,29 +1,41 @@
 class Solution {
     public static boolean isPalindrome(String s) {
-       int st=0;
-       int end=s.length()-1;
+    //    int st=0;
+    //    int end=s.length()-1;
 
-       while(st<end){
-        while(st<end && !Character.isLetterOrDigit(s.charAt(st))){
-            st++;
+    //    while(st<end){
+    //     while(st<end && !Character.isLetterOrDigit(s.charAt(st))){
+    //         st++;
            
-            }
-       while(st<end && !Character.isLetterOrDigit(s.charAt(end))){
-        end--;
+    //         }
+    //    while(st<end && !Character.isLetterOrDigit(s.charAt(end))){
+    //     end--;
         
-       }
+    //    }
 
-      if (Character.toLowerCase(s.charAt(st)) != 
-                Character.toLowerCase(s.charAt(end))) {
-                return false;
-            }
+    //   if (Character.toLowerCase(s.charAt(st)) != 
+    //             Character.toLowerCase(s.charAt(end))) {
+    //             return false;
+    //         }
 
-       else{
-        st++;
-        end--;
-       }
+    //    else{
+    //     st++;
+    //     end--;
+    //    }
+    // }
+    // return true;
+
+    StringBuilder sb=new StringBuilder();
+
+    for(char c:s.toCharArray()){
+        if(Character.isLetterOrDigit(c)){
+            sb.append(Character.toLowerCase(c));
+        }
     }
-    return true;
+
+    String sbstr=sb.toString();
+    String reversed=sb.reverse().toString();
+    return sbstr.equals(reversed);
     }
 
 
