@@ -25,17 +25,18 @@ class Solution {
     // }
     // return true;
 
-    StringBuilder sb=new StringBuilder();
+        StringBuilder sb=new StringBuilder();
 
-    for(char c:s.toCharArray()){
-        if(Character.isLetterOrDigit(c)){
-            sb.append(Character.toLowerCase(c));
+        for(char c:s.toCharArray()){
+            if(Character.isLetterOrDigit(c)){
+                sb.append(Character.toLowerCase(c));
+            }
         }
-    }
 
-    String sbstr=sb.toString();
-    String reversed=sb.reverse().toString();
-    return sbstr.equals(reversed);
+        String sbstr=sb.toString();
+        String reversed=sb.reverse().toString();
+
+        return sbstr.equals(reversed);
     }
 
 
