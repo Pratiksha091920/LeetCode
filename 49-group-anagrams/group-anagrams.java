@@ -3,23 +3,18 @@ class Solution {
 
         HashMap<String,List<String>> map=new HashMap<>();
 
-        if(strs==null ||strs.length==0){
-            return new ArrayList<>();
+        for(String word:strs){
+            char[] chars=word.toCharArray();
+            Arrays.sort(chars);
+
+            String sortedword=new String(chars);
+
+            if(!map.containsKey(sortedword)){
+                map.put(sortedword,new ArrayList<>());
+            }
+
+            map.get(sortedword).add(word);
         }
-
-        for(String words:strs){
-            char ch[]=words.toCharArray();
-             Arrays.sort(ch);
-            String Sortedword=new String(ch);
-
-            map.putIfAbsent(Sortedword,new ArrayList<>());
-            map.get(Sortedword).add(words);
-
-           
-        }
-
         return new ArrayList<>(map.values());
-       
-        
     }
 }
