@@ -8,12 +8,11 @@ class Solution {
             return 0;
         }
 
-        for(int i=0;i<=n-m;i++){
-            if(haystack.substring(i,i+m).equals(needle)){
-                return i;
-            }
+        if(haystack.contains(needle)){
+            return haystack.indexOf(needle);
         }
         return -1;
+       
         
     }
 }
